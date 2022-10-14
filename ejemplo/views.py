@@ -19,7 +19,7 @@ def index_tres(request):
     )
 
 def imc(request, peso, altura):
-    imc = int(peso) * int(altura)
+    imc = int(gitpeso) * float(altura)
     return render(request, "ejemplo/imc.html", {"imc":imc})
 
 def monstrar_familiares(request):
