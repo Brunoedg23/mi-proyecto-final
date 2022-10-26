@@ -8,10 +8,11 @@
 </head>
 <body>
 
+    <a href="{% url 'familiar-list' %}">Volver</a>
     <form method="post">
         {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="agregar">
+        "¿ Estás seguro de borrar el familiar {{ object }} ?"
+        <input type="submit" value="SI">
     </form>
 
 </body>

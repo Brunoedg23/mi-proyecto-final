@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ejemplo.apps.EjemploConfig',
+    'panel_familia.apps.PanelFamiliaConfig',
 ]
 
 MIDDLEWARE = [

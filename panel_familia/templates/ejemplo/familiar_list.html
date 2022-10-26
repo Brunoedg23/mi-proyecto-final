@@ -12,7 +12,11 @@
 {% block buscar %} {% endblock %}
 
 {% for familiar in object_list %}
-    <li>{{familiar}}</li>
+    <li>
+        <a href="{% url 'familiar-actualizar' familiar.id %}">Modificar</a> |
+        <a href="{% url 'familiar-borrar' familiar.id %}">Borrar</a>
+        {{familiar}}
+    </li>
 {% endfor %}    
 </ul>
 
