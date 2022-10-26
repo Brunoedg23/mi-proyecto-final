@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ejemplo.views import index, index_dos, index_tres, imc, monstrar_familiares, mostrar_un_solo_familiar
+from ejemplo.views import (index, index_dos, index_tres, 
+                           imc, monstrar_familiares, 
+                           mostrar_un_solo_familiar, FamiliarList, FamiliarCrear, 
+                           FamiliarBorrar, FamiliarActualizar)
 #from blog import index as blog_index
 
 urlpatterns = [
@@ -26,6 +29,10 @@ urlpatterns = [
     path('imc/<peso>/<altura>', imc),
     path('mi-familia/', monstrar_familiares),
     path('un_familiar/<id>', mostrar_un_solo_familiar),
-#    path('blog/',blog_index),
+    path('panel-familia/', FamiliarList.as_view()),
+    path('panel-familia/crear', FamiliarCrear.as_view()),
+    path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()),
+    path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
+    #    path('blog/',blog_index),
   ]
  
