@@ -57,10 +57,11 @@ $ pip install django-bootstrap-v5
 
 Windows:
 
-C:\> git clone https://github.com/martinezger/mi-primer-mvt.git
+C:\> git clone https://github.com/Brunoedg23/mi-proyecto-final.git
 Linux/Mac:
 
-$ git clone https://github.com/martinezger/mi-primer-mvt.git
+$ git clone https://github.com/Brunoedg23/mi-proyecto-final.git
+
 Correr el Servidor
 Los siguinetes comandos son analogos en Mac/Linux/Windows:
 `
@@ -80,5 +81,3 @@ Listo, estás en condiciones de ejecutar el ejemplo.
 
 Para poder visualizar el material debés hacer click en el siguiente link:
 http://127.0.0.1:8000/mi-familia/buscar
-
-
