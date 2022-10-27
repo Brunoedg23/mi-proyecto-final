@@ -10,3 +10,10 @@ class Familiar(models.Model):
 
     def __str__(self):
         return f"{self.nombre}, {self.numero_pasaporte}, {self.fecha_nacimiento}, {self.id}"
+
+
+class Configuracion(models.Model):
+    nombre_blog = models.CharField(max_length=14)
+    construido_por = models.CharField(max_length=30, default='')
+    titulo_principal = models.CharField(max_length=30, default='')
+    subtitulo_principal = models.CharField(max_length=60, default='')

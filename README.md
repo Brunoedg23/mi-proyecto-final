@@ -3,20 +3,24 @@ Nuestro MVT Django
 
 Entrega intermedia del Proyecto Final de Python de Coderhouse.
 
-
-En esta entrega de MVT se podrá visualizar código de Python en Djando de:
+En esta entrega de MVT se podrá visualizar código de Python en Django de:
 
 - Vistas
 - Formularios
-- Modelos
+- Modelos 
+    - Familiares
+    - Configuracion: Para seteo de nombre_blog, titulo_principal, subtitulo_principal
 - Templates
+    - buscar.html: es nuestra página de inicio para buscar familiares.
+    - alta_familiar.html: es nuestra página para la creación de familiares.
+- Herencia
+    - base.html: es nuestra extensión de página para estilos para todas nuestras páginas; donde utiliza el modelo Configuracion (para los datos básicos de información del blog); más la definición de CSS.
 
 
-Importante: Este ejemplo fue probado con python 3.10.6 y Django 4.0.4
+Importante: Este ejemplo fue probado con Python 3.10.6 y Django 4.1.2.
 
-
-Checkear que tengas Python
-Para comenzar primero tienen que asegurarse que tienen instalado, python.
+Checklist de Validación:
+1. Para comenzar tienen que asegurarse que tienen instalado: Python.
 
 En windows tiene que abrir una terminal cmd o powershell.
 
@@ -29,24 +33,29 @@ $ python --version
 Python 3.X.X 
 `
 
-Si les aparece la versión todo OK pueden seguir. Caso contrario descarguen python desde este link.
+Si les aparece la versión todo OK pueden continuar. Caso contrario descarguen python desde este link.
 
-Instalar django
+2. Instalar django
 En una terminal cmd o powershell desde windows:
-
+`
 C:\> pip install django
 Linux/Mac:
 
 $ pip install django
+`
 Si no arrojo errores esto es suficiente para poder correr el projecto.
 
-Instalar django bootstrap v5
+3. Instalar Django bootstrap v5
+`
 C:\> pip install django-bootstrap-v5
 Linux/Mac:
 
 $ pip install django-bootstrap-v5
-Clonar el projecto con git
-windows:
+`
+
+4. Clonar el projecto con git
+
+Windows:
 
 C:\> git clone https://github.com/martinezger/mi-primer-mvt.git
 Linux/Mac:
@@ -54,16 +63,22 @@ Linux/Mac:
 $ git clone https://github.com/martinezger/mi-primer-mvt.git
 Correr el Servidor
 Los siguinetes comandos son analogos en Mac/Linux/Windows:
-
+`
 cd mi-primer-mvt
 python manage.py migrate
+`
+
 La consola mostrara las migraciones de la base de datos que se realizaron.
 
-Luego arrancamos el servidor web
-
+5. Luego iniciamos el servidor web
+`
 python manage.py runserver
-Listo ya tenes corriendo el ejemplo.
+`
+
+Listo, estás en condiciones de ejecutar el ejemplo.
  
 
 Para poder visualizar el material debés hacer click en el siguiente link:
-http://127.0.0.1:8000/
+http://127.0.0.1:8000/mi-familia/buscar
+
+
