@@ -63,7 +63,7 @@ Luego arrancamos el servidor web
 
 python manage.py runserver
 Listo ya tenes corriendo el ejemplo.
-
+ 
 
 Para poder visualizar el material debés hacer click en el siguiente link:
 http://127.0.0.1:8000/
