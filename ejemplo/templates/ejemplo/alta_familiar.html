@@ -1,0 +1,14 @@
+{% extends 'ejemplo/base.html' %}
+{% block title %}Alta de Nuevo Familiar{% endblock %}
+{% block titulo %}Alta de Nuevo Familiar{% endblock %}
+{% block contenido %}
+  
+  <form action="/mi-familia/alta" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Grabar">
+  </form>
+
+  <h2 style="color:green">{{msg_exito}}</h2>
+
+{% endblock %}
