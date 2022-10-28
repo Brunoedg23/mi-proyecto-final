@@ -53,22 +53,12 @@ Linux/Mac:
 $ pip install django-bootstrap-v5
 `
 
-4. Clonar el projecto con git
-
-Windows:
-
-C:\> git clone https://github.com/Brunoedg23/mi-proyecto-final.git
-Linux/Mac:
-
-$ git clone https://github.com/Brunoedg23/mi-proyecto-final.git
-
-Correr el Servidor
+4. Correr el Servidor
 Los siguinetes comandos son analogos en Mac/Linux/Windows:
 `
 cd mi-primer-mvt
 python manage.py migrate
 `
-
 La consola mostrara las migraciones de la base de datos que se realizaron.
 
 5. Luego iniciamos el servidor web
@@ -78,6 +68,5 @@ python manage.py runserver
 
 Listo, estás en condiciones de ejecutar el ejemplo.
  
-
 Para poder visualizar el material debés hacer click en el siguiente link:
 http://127.0.0.1:8000/mi-familia/buscar
