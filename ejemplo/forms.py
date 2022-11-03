@@ -1,5 +1,5 @@
 from django import forms
-from ejemplo.models import (Familiar, FamiliarHobbie, FamiliarProfesion)
+from ejemplo.models import (Familiar, Vivienda, Datos)
 
 class Buscar(forms.Form):
   nombre = forms.CharField(max_length=100)
@@ -9,17 +9,12 @@ class FamiliarForm(forms.ModelForm):
     model = Familiar
     fields = ['nombre', 'direccion', 'numero_pasaporte', 'fecha_nacimiento']
 
-class ActualizarForm(forms.ModelForm):
+class ViviendaForm(forms.ModelForm):
   class Meta:
-    model = Familiar
-    fields = ['nombre', 'direccion', 'numero_pasaporte']
+    model = Vivienda
+    fields = ['nombre',  'tipo_casa', 'habitaciones', 'baños' ,'descripcion']
 
-class HobbieForm(forms.ModelForm):
+class DatosForm(forms.ModelForm):
   class Meta:
-    model = FamiliarHobbie
-    fields = ['nombre', 'hobbie']
-
-class ProfesionForm(forms.ModelForm):
-  class Meta:
-    model = FamiliarProfesion
-    fields = ['nombre', 'profesion']
+    model = Datos
+    fields = ['nombre', 'profesion', 'hobbie', 'deporte']

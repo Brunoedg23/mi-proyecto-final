@@ -12,13 +12,19 @@ class Familiar(models.Model):
         return f"{self.nombre}, {self.numero_pasaporte}, {self.fecha_nacimiento}, {self.id}"
 
 
-class FamiliarHobbie(models.Model):
+class Vivienda(models.Model):
     nombre = models.CharField(max_length=100)
-    hobbie = models.CharField(max_length=500)
+    tipo_casa = models.CharField(max_length=100)
+    habitaciones = models.IntegerField()
+    baños = models.IntegerField()
+    descripcion = models.CharField(max_length=1000)
 
-class FamiliarProfesion(models.Model):
+
+class Datos(models.Model):
     nombre = models.CharField(max_length=100)
     profesion = models.CharField(max_length=500)
+    hobbie =  models.CharField(max_length=100)
+    deporte =  models.CharField(max_length=100)
 
 
 class Configuracion(models.Model):

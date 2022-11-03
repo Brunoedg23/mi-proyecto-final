@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render
-from ejemplo.models import Familiar, Configuracion
-from ejemplo.forms import (Buscar, FamiliarForm, ActualizarForm)
+from ejemplo.models import (Familiar, Datos, Vivienda, Configuracion)
+from ejemplo.forms import (Buscar, FamiliarForm, ViviendaForm, DatosForm)
 from django.views import View 
 
 
@@ -83,9 +83,9 @@ class AltaFamiliar(View):
         return render(request, self.template_name, {"form": form, 'conf_pages':conf_pages}) 
 
 
-class ActualizarFamiliar(View):
-    form_class = ActualizarForm
-    template_name = 'ejemplo/actualizar_familiar.html'
+class Datos(View):
+    form_class = DatosForm
+    template_name = 'ejemplo/datos_familiar.html'
     initial = {"nombre":""}
 
     def get(self, request):
@@ -98,7 +98,30 @@ class ActualizarFamiliar(View):
         conf_pages = Configuracion.objects.first()
         if form.is_valid():
             form.save()
-            msg_exito = f"Se actualizó con éxito el familiar {form.cleaned_data.get('nombre')}"
+            msg_exito = f"Se actualizó con éxito  {form.cleaned_data.get('nombre')}"
+            form = self.form_class(initial=self.initial)
+            return render(request, self.template_name, {'form':form, 
+                                                        'msg_exito': msg_exito,
+                                                        'conf_pages':conf_pages})
+        
+        return render(request, self.template_name, {"form": form, 'conf_pages':conf_pages})
+
+class Vivienda(View):
+    form_class = ViviendaForm
+    template_name = 'ejemplo/vivienda_familiar.html'
+    initial = {"nombre":""}
+
+    def get(self, request):
+        form = self.form_class(initial=self.initial)
+        conf_pages = Configuracion.objects.first()
+        return render(request, self.template_name, {'form':form,'conf_pages':conf_pages})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+        conf_pages = Configuracion.objects.first()
+        if form.is_valid():
+            form.save()
+            msg_exito = f"Se actualizó con éxito  {form.cleaned_data.get('nombre')}"
             form = self.form_class(initial=self.initial)
             return render(request, self.template_name, {'form':form, 
                                                         'msg_exito': msg_exito,

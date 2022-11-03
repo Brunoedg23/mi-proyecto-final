@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from ejemplo.views import (index, index_dos, index_tres, 
                            imc, monstrar_familiares, 
-                           mostrar_un_solo_familiar, BuscarFamiliar, AltaFamiliar, ActualizarFamiliar)
+                           mostrar_un_solo_familiar, BuscarFamiliar, AltaFamiliar, Datos, Vivienda)
 from blog.views import index as blog_index
 
 urlpatterns = [
@@ -32,6 +32,8 @@ urlpatterns = [
     path('panel-familia/', include('panel_familia.urls')),
     path('mi-familia/buscar', BuscarFamiliar.as_view(),name="familiar-buscar"), 
     path('mi-familia/alta', AltaFamiliar.as_view(),name="familiar-alta"),
-    path('mi-familia/actualizar', ActualizarFamiliar.as_view(),name="familiar-actualizar"),
+    path('mi-familia/vivienda', Vivienda.as_view(),name="familiar-vivienda"),
+    path('mi-familia/datos', Datos.as_view(),name="familiar-datos"),
   ]
+  
  
