@@ -12,6 +12,15 @@ class Familiar(models.Model):
         return f"{self.nombre}, {self.numero_pasaporte}, {self.fecha_nacimiento}, {self.id}"
 
 
+class FamiliarHobbie(models.Model):
+    nombre = models.CharField(max_length=100)
+    hobbie = models.CharField(max_length=500)
+
+class FamiliarProfesion(models.Model):
+    nombre = models.CharField(max_length=100)
+    profesion = models.CharField(max_length=500)
+
+
 class Configuracion(models.Model):
     nombre_blog = models.CharField(max_length=14)
     construido_por = models.CharField(max_length=30, default='')

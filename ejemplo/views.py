@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render
 from ejemplo.models import Familiar, Configuracion
-from ejemplo.forms import Buscar, FamiliarForm
+from ejemplo.forms import (Buscar, FamiliarForm, ActualizarForm)
 from django.views import View 
 
 
@@ -75,6 +75,30 @@ class AltaFamiliar(View):
         if form.is_valid():
             form.save()
             msg_exito = f"Se cargó con éxito el familiar {form.cleaned_data.get('nombre')}"
+            form = self.form_class(initial=self.initial)
+            return render(request, self.template_name, {'form':form, 
+                                                        'msg_exito': msg_exito,
+                                                        'conf_pages':conf_pages})
+        
+        return render(request, self.template_name, {"form": form, 'conf_pages':conf_pages}) 
+
+
+class ActualizarFamiliar(View):
+    form_class = ActualizarForm
+    template_name = 'ejemplo/actualizar_familiar.html'
+    initial = {"nombre":""}
+
+    def get(self, request):
+        form = self.form_class(initial=self.initial)
+        conf_pages = Configuracion.objects.first()
+        return render(request, self.template_name, {'form':form,'conf_pages':conf_pages})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+        conf_pages = Configuracion.objects.first()
+        if form.is_valid():
+            form.save()
+            msg_exito = f"Se actualizó con éxito el familiar {form.cleaned_data.get('nombre')}"
             form = self.form_class(initial=self.initial)
             return render(request, self.template_name, {'form':form, 
                                                         'msg_exito': msg_exito,

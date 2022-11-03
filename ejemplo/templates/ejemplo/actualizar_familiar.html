@@ -1,0 +1,20 @@
+{% extends 'ejemplo/base.html' %}
+{% block titulo %}Actualizar Familiar{% endblock %}
+{% block contenido %}
+
+<P></P>
+  
+<form action="/mi-familia/actualizar" method="post">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Grabar">
+</form>
+
+<h2 style="color:green">{{msg_exito}}</h2>
+
+<center>
+<TABLE width="200"><TR><TD align="center" class="navegacion"><a href="{% url 'familiar-actualizar' %}">Actualizar</a></TD></TR></TABLE>
+</center>
+  
+
+{% endblock %}
