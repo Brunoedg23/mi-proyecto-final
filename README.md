@@ -10,9 +10,13 @@ En esta entrega de MVT se podrá visualizar código de Python en Django de:
 - Modelos 
     - Familiares
     - Configuracion: Para seteo de nombre_blog, titulo_principal, subtitulo_principal
+    - Vivienda
+    - Datos
 - Templates
     - buscar.html: es nuestra página de inicio para buscar familiares.
     - alta_familiar.html: es nuestra página para la creación de familiares.
+    - vivienda_familiar.html: es nuestra página agregar informacion de vivienda.
+    - datos_familiar.html: es nuestra página agregar datos de hobbies y profesiones.
 - Herencia
     - base.html: es nuestra extensión de página para estilos para todas nuestras páginas; donde utiliza el modelo Configuracion (para los datos básicos de información del blog); más la definición de CSS.
 
