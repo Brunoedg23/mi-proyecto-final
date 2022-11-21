@@ -1,28 +1,37 @@
 # mi-proyecto-final
-Nuestro MVT Django
+#Nuestro Proyecto Django: 
+Recorriendo Argentina
 
-Entrega intermedia del Proyecto Final de Python de Coderhouse.
+#Objetivo:
+Entrega final del Proyecto Final de BLOG en Python/Django para Coderhouse.
 
-En esta entrega de MVT se podrá visualizar código de Python en Django de:
+#Descripción del Proyecto:
+El proyecto que hemos desarrollado es un Blog de lugares de Argentina; donde cada usuario tiene la posibilidad mediante una registración de crear publicaciones de ciudades/lugares que haya visitado. Todo el contenido podría ser administrado vía login; y en la vista pública el usuario solamente podrá observar los lugares pre-cargados...
+
+#Integrantes del Proyecto:
+- Bethzabeth Mendoza
+- Bruno Di Gaetano
+
+#Despliegue de nuestro Blog:
+En dicho proyecto se podrá visualizar el código en Python/Django de las siguientes funcionalidades:
 
 - Vistas
 - Formularios
 - Modelos 
-    - Familiares
-    - Configuracion: Para seteo de nombre_blog, titulo_principal, subtitulo_principal
+    - User
+    - Post
 - Templates
     - buscar.html: es nuestra página de inicio para buscar familiares.
     - alta_familiar.html: es nuestra página para la creación de familiares.
 - Herencia
-    - base.html: es nuestra extensión de página para estilos para todas nuestras páginas; donde utiliza el modelo Configuracion (para los datos básicos de información del blog); más la definición de CSS.
-
+    - base.html: es nuestra extensión de página para estilos y características generales de todas nuestras páginas; donde se utilizan varios blocks para facilitar las configuraciones del titulo de la página, sección de la página y navegación de todo el proyecto; sumándole toda la definición del CSS.
 
 Importante: Este ejemplo fue probado con Python 3.10.6 y Django 4.1.2.
 
 Checklist de Validación:
 1. Para comenzar tienen que asegurarse que tienen instalado: Python.
 
-En windows tiene que abrir una terminal cmd o powershell.
+En Windows tiene que abrir una terminal cmd o powershell.
 
 `
 PS C:\> python --version
@@ -33,9 +42,9 @@ $ python --version
 Python 3.X.X 
 `
 
-Si les aparece la versión todo OK pueden continuar. Caso contrario descarguen python desde este link.
+Si les aparece la versión todo OK pueden continuar. Caso contrario descarguen Python desde este link.
 
-2. Instalar django
+2. Instalar Django
 En una terminal cmd o powershell desde windows:
 `
 C:\> pip install django
