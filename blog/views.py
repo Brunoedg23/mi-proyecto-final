@@ -66,6 +66,7 @@ class BlogSignUp(CreateView):
     success_url = reverse_lazy("blog-login")
     template_name = "registration/signup.html"
 
+
 class ProfileUpdate(LoginRequiredMixin, UpdateView):
     model = User
     fields = ['username', 'first_name', 'last_name', 'email']
