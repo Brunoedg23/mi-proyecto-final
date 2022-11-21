@@ -1,4 +1,5 @@
-# mi-proyecto-final
+# mi-proyecto-final - PROYECTO FINAL DEL CURSO DE PYTHON - CODERHOUSE
+
 # Nuestro Proyecto Django: 
 Recorriendo Argentina
 
@@ -16,65 +17,89 @@ El proyecto que hemos desarrollado es un Blog de lugares de Argentina; donde cad
 En dicho proyecto se podrá visualizar el código en Python/Django de las siguientes funcionalidades:
 
 - Vistas
+
 - Formularios
+
 - Modelos 
     - User
     - Post
+
 - Templates
-    - buscar.html: es nuestra página de inicio para buscar familiares.
-    - alta_familiar.html: es nuestra página para la creación de familiares.
+    - templates/auth
+        - user_form.html: formulario para actualizar/modificar del profile del usuario logueado.
+    - templates/blog
+        - blog_login.html: inicio de sesión.
+        - blog_logout.html: salida exitosa de una sesión.
+        - index.html: Home del blog.
+        - post_confirm_delete.html: confirmación o no de una baja de un post.
+        - post_detail.html: visualización del detalle de un post seleccionado anteriormente.
+        - post_form.html: formulario de carga/actualización de un post.
+        - post_list.html: visualización del listado de los post cargados en el Blog.
+    - templates/registration
+        - signup.html: registración de los usuarios.
+
 - Herencia
     - base.html: es nuestra extensión de página para estilos y características generales de todas nuestras páginas; donde se utilizan varios blocks para facilitar las configuraciones del titulo de la página, sección de la página y navegación de todo el proyecto; sumándole toda la definición del CSS.
 
 Importante: Este ejemplo fue probado con Python 3.10.6 y Django 4.1.2.
 
 # Checklist de Validación:
-1. Para comenzar tienen que asegurarse de tener instalado: Python.
 
-En Windows tienen que abrir una terminal cmd o powershell.
-```C:\> python --version
+1. Para comenzar tienen que asegurarse de tener instalado: Python.
+- En Windows tienen que abrir una terminal cmd o powershell.
+```
+C:\> python --version
 Python 3.X.X 
 ```
 
-En Linux/Mac tiene que abrir una terminal bash
-```$ python --version
+- En Linux/Mac tiene que abrir una terminal bash
+```
+$ python --version
 Python 3.X.X 
 ```
 
 Si les aparece la versión todo OK pueden continuar. Caso contrario descarguen Python desde este link: https://www.python.org/downloads/
 
 2. Instalar Django
-En una terminal CMD o PowerShell desde Windows:
-```C:\> pip install django
+- En una terminal CMD o PowerShell desde Windows:
 ```
-Linux/Mac:
-```$ pip install django
+C:\> pip install django
+```
+- Linux/Mac:
+```
+$ pip install django
 ```
 
 Si no arrojo errores esto es suficiente para poder correr el projecto.
 
 3. Instalar Django bootstrap v5
-Windows:
-```C:\> pip install django-bootstrap-v5
+- Windows:
 ```
-Linux/Mac:
-```$ pip install django-bootstrap-v5
+C:\> pip install django-bootstrap-v5
+```
+- Linux/Mac:
+```
+$ pip install django-bootstrap-v5
 ```
 
 4. Instalar Django Middleware (Plugin) => Para almacenar Media/Imágenes en Servidor Local
-Windows:
-```C:\>pip install whitenoise
+- Windows:
 ```
-Linux/Mac:
-```$ pip install whitenoise
+C:\>pip install whitenoise
+```
+- Linux/Mac:
+```
+$ pip install whitenoise
 ```
 
 5. Instalar Django Pillow (Plugin) => Para trabajar con Imágenes
-Windows:
-```C:\>pip install Pillow
+- Windows:
 ```
-Linux/Mac:
-```$ pip install Pillow
+C:\>pip install Pillow
+```
+- Linux/Mac:
+```
+$ pip install Pillow
 ```
 
 6. Migraciones
