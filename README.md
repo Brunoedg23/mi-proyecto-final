@@ -32,60 +32,65 @@ Importante: Este ejemplo fue probado con Python 3.10.6 y Django 4.1.2.
 1. Para comenzar tienen que asegurarse de tener instalado: Python.
 
 En Windows tienen que abrir una terminal cmd o powershell.
-
-`
-PS C:\> python --version
+```C:\> python --version
 Python 3.X.X 
+```
+
 En Linux/Mac tiene que abrir una terminal bash
-
-$ python --version
+```$ python --version
 Python 3.X.X 
-`
+```
 
 Si les aparece la versión todo OK pueden continuar. Caso contrario descarguen Python desde este link: https://www.python.org/downloads/
 
 2. Instalar Django
 En una terminal CMD o PowerShell desde Windows:
-`
-C:\> pip install django
+```C:\> pip install django
+```
 Linux/Mac:
+```$ pip install django
+```
 
-$ pip install django
-`
 Si no arrojo errores esto es suficiente para poder correr el projecto.
 
 3. Instalar Django bootstrap v5
 Windows:
-C:\> pip install django-bootstrap-v5
+```C:\> pip install django-bootstrap-v5
+```
 Linux/Mac:
-$ pip install django-bootstrap-v5
+```$ pip install django-bootstrap-v5
+```
 
 4. Instalar Django Middleware (Plugin) => Para almacenar Media/Imágenes en Servidor Local
 Windows:
-C:\>pip install whitenoise
+```C:\>pip install whitenoise
+```
 Linux/Mac:
-$ pip install whitenoise
+```$ pip install whitenoise
+```
 
 5. Instalar Django Pillow (Plugin) => Para trabajar con Imágenes
 Windows:
 ```C:\>pip install Pillow
+```
 Linux/Mac:
 ```$ pip install Pillow
+```
 
-6. Correr el Servidor
-Los siguientes comandos son analogos en Mac/Linux/Windows:
-`
-cd mi-primer-mvt
+6. Migraciones
+Los siguientes comandos son análogos en Mac/Linux/Windows:
+```
 python manage.py migrate
-`
+```
 La consola mostrara las migraciones de la base de datos que se realizaron.
 
 5. Luego iniciamos el servidor web
-`
+```
 python manage.py runserver
-`
+```
 
-Listo, estás en condiciones de ejecutar el ejemplo.
+Listo, ya estás en condiciones de ejecutar el Blog.
  
 Para poder visualizar el material debés hacer click en el siguiente link:
-http://127.0.0.1:8000/mi-familia/buscar
+http://127.0.0.1:8000/blog
+
