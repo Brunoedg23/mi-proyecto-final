@@ -20,13 +20,13 @@ En dicho proyecto se podrá visualizar el código en Python/Django de las siguie
 
 - Formularios
 
-- Modelos 
+- Modelos:
     - User
     - Post
 
-- Templates
+- Templates:
     - templates/auth
-        - user_form.html: formulario para actualizar/modificar del profile del usuario logueado.
+        - user_form.html: formulario para actualizar/modificar del profile del usuario logueado. 
     - templates/blog
         - blog_login.html: inicio de sesión.
         - blog_logout.html: salida exitosa de una sesión.
@@ -38,7 +38,7 @@ En dicho proyecto se podrá visualizar el código en Python/Django de las siguie
     - templates/registration
         - signup.html: registración de los usuarios.
 
-- Herencia
+- Herencia:
     - base.html: es nuestra extensión de página para estilos y características generales de todas nuestras páginas; donde se utilizan varios blocks para facilitar las configuraciones del titulo de la página, sección de la página y navegación de todo el proyecto; sumándole toda la definición del CSS.
 
 Importante: Este ejemplo fue probado con Python 3.10.6 y Django 4.1.2.
