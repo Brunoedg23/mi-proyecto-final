@@ -1,18 +1,18 @@
 # mi-proyecto-final
-#Nuestro Proyecto Django: 
+# Nuestro Proyecto Django: 
 Recorriendo Argentina
 
-#Objetivo:
+# Objetivo:
 Entrega final del Proyecto Final de BLOG en Python/Django para Coderhouse.
 
-#Descripción del Proyecto:
+# Descripción del Proyecto:
 El proyecto que hemos desarrollado es un Blog de lugares de Argentina; donde cada usuario tiene la posibilidad mediante una registración de crear publicaciones de ciudades/lugares que haya visitado. Todo el contenido podría ser administrado vía login; y en la vista pública el usuario solamente podrá observar los lugares pre-cargados...
 
-#Integrantes del Proyecto:
+# Integrantes del Proyecto:
 - Bethzabeth Mendoza
 - Bruno Di Gaetano
 
-#Despliegue de nuestro Blog:
+# Despliegue de nuestro Blog:
 En dicho proyecto se podrá visualizar el código en Python/Django de las siguientes funcionalidades:
 
 - Vistas
@@ -28,10 +28,10 @@ En dicho proyecto se podrá visualizar el código en Python/Django de las siguie
 
 Importante: Este ejemplo fue probado con Python 3.10.6 y Django 4.1.2.
 
-Checklist de Validación:
-1. Para comenzar tienen que asegurarse que tienen instalado: Python.
+# Checklist de Validación:
+1. Para comenzar tienen que asegurarse de tener instalado: Python.
 
-En Windows tiene que abrir una terminal cmd o powershell.
+En Windows tienen que abrir una terminal cmd o powershell.
 
 `
 PS C:\> python --version
@@ -42,10 +42,10 @@ $ python --version
 Python 3.X.X 
 `
 
-Si les aparece la versión todo OK pueden continuar. Caso contrario descarguen Python desde este link.
+Si les aparece la versión todo OK pueden continuar. Caso contrario descarguen Python desde este link: https://www.python.org/downloads/
 
 2. Instalar Django
-En una terminal cmd o powershell desde windows:
+En una terminal CMD o PowerShell desde Windows:
 `
 C:\> pip install django
 Linux/Mac:
@@ -55,15 +55,25 @@ $ pip install django
 Si no arrojo errores esto es suficiente para poder correr el projecto.
 
 3. Instalar Django bootstrap v5
-`
+Windows:
 C:\> pip install django-bootstrap-v5
 Linux/Mac:
-
 $ pip install django-bootstrap-v5
-`
 
-4. Correr el Servidor
-Los siguinetes comandos son analogos en Mac/Linux/Windows:
+4. Instalar Django Middleware (Plugin) => Para almacenar Media/Imágenes en Servidor Local
+Windows:
+C:\>pip install whitenoise
+Linux/Mac:
+$ pip install whitenoise
+
+5. Instalar Django Pillow (Plugin) => Para trabajar con Imágenes
+Windows:
+```C:\>pip install Pillow
+Linux/Mac:
+```$ pip install Pillow
+
+6. Correr el Servidor
+Los siguientes comandos son analogos en Mac/Linux/Windows:
 `
 cd mi-primer-mvt
 python manage.py migrate
