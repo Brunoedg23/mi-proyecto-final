@@ -1,0 +1,52 @@
+{% extends 'blog/base.html' %}
+{% block title %} - ListView{% endblock %}
+{% block pagina %}ListView{% endblock %}
+{% block contenido %}
+
+<BR>    
+    <div class="container">
+        <table class="table_form" cellpadding=5 cellspacing=3 style="width:90%;">
+            <tr style="background-color:black; color:white;">
+                <th colspan="6">ListView</th>
+            </tr>
+            <tr style="background-color:navy; color:white;">
+            <th>TITLE</th>
+            <th>SHORT CONTENT</th>
+            <th>DATE PUBLISHED</th>
+            <th colspan=3>ACTION</th>
+        </tr>
+        
+        {% for post in object_list %}
+            <tr style="background-color: #CCCCCC;">
+                <td nowrap><a class="nav-link" href="{% url 'detail-post' post.id  %}">{{ post.title }}</a></td>
+                <td style="font-size:8pt;"><I>{{ post.short_content }}</I></td>
+                <td nowrap>{{ post.date_published }} </td>
+                <td><a class="btn btn-primary" href="{% url 'detail-post' post.id  %}">Ver</a></td>
+                {% if user.is_authenticated %}
+                <td><a class="btn btn-primary" href="{% url 'delete-post' post.id  %}">Borrar</a></td>
+                <td><a class="btn btn-primary" href="{% url 'update-post' post.id  %}">Actualizar</a></td>
+                {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>    
+  
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">anterior</a>
+            {% endif %}
+            <CENTER>
+            <span class="current">P&aacute;gina {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+            </span>
+            </CENTER>
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">siguiente</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+{% endblock %}

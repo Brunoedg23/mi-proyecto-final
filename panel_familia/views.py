@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render
 from ejemplo.models import Familiar
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
+from django.urls import reverse_lazy
 
 # Create your views here.
 
@@ -11,7 +12,8 @@ class FamiliarList(ListView):
 
 class FamiliarCrear(CreateView):
   model = Familiar
-  success_url = "/panel-familia"
+  success_url = reverse_lazy("family")
+
   fields = ["nombre", "direccion", "numero_pasaporte", "fecha_nacimiento"]
 
 

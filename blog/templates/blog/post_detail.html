@@ -1,0 +1,43 @@
+{% extends 'blog/base.html' %}
+{% block title %} - DetailView{% endblock %}
+{% block pagina %}DetailView{% endblock %}
+
+{% load static %}
+
+{% block contenido %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color:white; text-align:center;">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="{% url 'list-post' %}">Volver</a></li>
+        </ul>
+        </div>
+    </div>
+</nav>
+
+<BR>
+<CENTER>
+<TABLE class="table_form" width="900">
+<TR>
+<TH COLSPAN="2" style="background-color: black; color:white;"><H1>{{object.title}}</H1></TH>
+</TR>
+<TR>
+<TD rowspan="3" width="350">
+{% if object.image %}
+<img height="255" src="{{ object.image.url }}" />
+{% else %}
+<img height="255" src="https://dummyimage.com/255x255/dee2e6/6c757d.jpg" alt="...">
+{% endif %}
+</TD>
+<TD valign="top" style="text-align:left;"><B>Publicado:</B><BR>{{object.date_published}}</TD>
+</TR>
+<TR>
+<TD valign="top" style="text-align:left;"><B>Short Content:</B><BR><I>{{object.short_content}}</I></TD>
+</TR>
+<TR>
+<TD valign="top" style="text-align:left;"><B>Content:</B><BR>{{object.content}}</TD>
+</TR>
+</TABLE>
+</CENTER>
+{% endblock %}

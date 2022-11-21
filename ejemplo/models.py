@@ -17,3 +17,21 @@ class Configuracion(models.Model):
     construido_por = models.CharField(max_length=30, default='')
     titulo_principal = models.CharField(max_length=30, default='')
     subtitulo_principal = models.CharField(max_length=60, default='')
+
+
+class Vivienda(models.Model):
+    nombre = models.CharField(max_length=100)
+    tipo_casa = models.CharField(max_length=100, default='')
+    habitaciones = models.IntegerField()
+    banos = models.IntegerField()
+    descripcion = models.CharField(max_length=1000, default='')
+
+    def __str__(self):
+        return f"{self.nombre}, {self.tipo_casa}, {self.habitaciones}, {self.banos}, {self.descripcion}, {self.id}"
+
+
+class Datos(models.Model):
+    nombre = models.CharField(max_length=100)
+    profesion = models.CharField(max_length=500)
+    hobbie =  models.CharField(max_length=100)
+    deporte =  models.CharField(max_length=100)

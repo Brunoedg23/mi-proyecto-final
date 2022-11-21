@@ -1,0 +1,23 @@
+{%extends 'blog/base.html' %}
+{% block title %} - Login{% endblock %}
+{% block pagina %}Login{% endblock %}
+
+
+{% block contenido %}
+<CENTER>
+<TABLE class="table_form" width="300">
+<TR>
+<TH style="text-align:center; background-color: black; color:white;">LOGIN</TH>
+</TR>
+<TR><TD>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary" type="submit">Ingresar</button>
+</form>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+{% endblock %}

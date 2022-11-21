@@ -1,0 +1,24 @@
+{%extends 'blog/base.html' %}
+{% block title %} - SignUp{% endblock %}
+{% block pagina %}SignUp{% endblock %}
+
+{% block contenido %}
+<CENTER>
+    <TABLE class="table_form" width="700" valign="top">
+    <TR>
+    <TH style="text-align:center; background-color: black; color:white;">SIGN UP</TH>
+    </TR>
+    <TR><TD>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+    </form>
+
+    </TD>       
+    </TR>
+    </TABLE>
+</CENTER>
+
+{% endblock %}

@@ -1,19 +1,15 @@
-from ejemplo.models import Familiar
-from ejemplo.models import Configuracion
+from ejemplo.models import Vivienda
 
-#Familiar(nombre="Rosario", direccion="Rio Parana 745", numero_pasaporte=123123).save()
-#Familiar(nombre="Alberto", direccion="Rio Parana 745", numero_pasaporte=890890).save()#Familiar(nombre="Samuel", direccion="Rio Parana 745", numero_pasaporte=345345).save()
-#Familiar(nombre="Florencia", direccion="Rio Parana 745", numero_pasaporte=567567).save()
+Vivienda(nombre="Nueva", habitaciones="1", tipo_casa="Casa", banos="1", descripcion="Algo").save()
 
-#print("Se cargo con éxito los usuarios de pruebas")
 
-#Configuracion(nombre_blog="Mi blog", construido_por="", titulo_principal="Familiares", subtitulo_principal="ABM en Django").save()
+print(Vivienda.objects.all())
+#from blog.models import Post
 
-#Configuracion(nombre_blog="Mi blog de Familiares")
+#Post(title="Mi post", short_content="un post", content="sadljalsjdlkajsdljasljdlaksjd").save()
+#Post(title="Mi post", short_content="un post", content="sadljalsjdlkajsdljasljdlaksjd").save()
+#Post(title="Mi post", short_content="un post", content="sadljalsjdlkajsdljasljdlaksjd").save()
+#Post(title="Mi post", short_content="un post", content="sadljalsjdlkajsdljasljdlaksjd").save()
 
-Conf = Configuracion.objects.get(nombre_blog="Mi blog")
+#print(Post.objects.all())
 
-print(f"{Conf.nombre_blog, Conf.titulo_principal}")
-
-#configuracion = Configuracion.objects.first()
-#print(f"{configuracion.id, configuracion.nombre_blog}") 

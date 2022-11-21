@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Mi Blog de Viajes {% block title %}{% endblock %}</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'blog/css/styles.css' %}" rel="stylesheet" />
+</head>
+<body>
+    {%block nav %}
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index-blog' %}">El Blog bien Argento...</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'index-blog' %}">Home</a></li>
+                    {% if user.is_authenticated != True %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'blog-login' %}">Ingresar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'blog-signup' %}">Registrarse</a></li>
+                    {% endif %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'create-post' %}">Crear Publicaci&oacute;n</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about-blog' %}">About</a></li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item" width="200"><a class="nav-link" href="{% url 'profile-update' user.id %}">Update Profile</a></li>
+                    <li class="nav-item"></li><a class="nav-link" href="{% url 'blog-logout' %}">Logout</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% endblock %}
+    
+    <!-- Page header with logo and tagline-->
+    <header class="py-5 bg-light border-bottom mb-4" style="background-image: url('{% static "blog/css/background.jpg" %}'); background-repeat: no-repeat; height: 130px;">
+        {% block header %}
+        <div>
+            <h1 class="fw-bolder">Recorriendo Argentina...</h1>
+            <div class="lead mb-0">Conozca y recorra nuestros mejores rinconcitos del pa&iacute;s...</div>
+        </div>
+        {% endblock %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <span style="color:white; width:300px; font-weight: bold;">&nbsp;{% block pagina %}{% endblock %}</span>
+            <div class="container">
+            {% if user.is_authenticated %}
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color:white; text-align:right;">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">Bienvenido/a&nbsp;</li>
+                {% if user.id != null %}
+                <li class="nav-item">
+                    {%if user.first_name != null %} {{ user.first_name }}
+                    {% else %} {{ user.username }}
+                    {% endif %}
+                </li>
+                {% endif %}
+                </ul>
+                </div>
+            {% endif %}
+            </div>
+            </nav>
+        
+
+    </header>
+    
+    
+    <!-- Page content-->
+    
+    {% block contenido %}{% endblock %}
+    
+   
+    {% block footer %}
+    <HR>
+    <CENTER>
+    <TABLE width="100%" class="bg-dark">
+    <TR><TH style="text-align:center; color:white;">TRABAJO FINAL de Bethzabeth Mendoza y Bruno Di Gaetano</TH></TR>
+    </TABLE>
+    </CENTER>
+    {% endblock %}
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+
+
+</body>    
+</html>

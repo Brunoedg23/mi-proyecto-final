@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+{% block title %} - DeleteView{% endblock %}
+{% block pagina %}DeleteView{% endblock %}
+{% block contenido %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color:white; text-align:center;">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="{% url 'list-post' %}">Volver</a></li>
+        </ul>
+        </div>
+    </div>
+</nav>
+
+<BR>
+<CENTER>
+    <form name="f1" method="post">
+        {% csrf_token %}
+        {{form}}
+    <table class="table_form" style="height:150px; width:500px;">
+    <TR>
+    <TH style="text-align:center; background-color: black; color:white;">DeleteView</TH>
+    </TR>
+    <tr><td style="text-align:center;">¿Est&aacute; seguro de borrar el post <B>{{post.title}}</B>? 
+    </td></tr>
+    <tr><td><input class="btn btn-primary" type="submit" value="Si">
+        <A class="btn btn-primary" href="/blog/list">No</A></td>
+        </tr>
+        </table>
+    </form>
+
+</CENTER>
+{% endblock %}

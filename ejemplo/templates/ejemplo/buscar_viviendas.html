@@ -1,0 +1,38 @@
+{% extends 'ejemplo/base.html' %}
+{% block title %}Buscar Viviendas por Nombre{% endblock %}
+{% block titulo%}Buscar Viviendas por Nombre{% endblock %}
+{% block contenido %}
+
+
+  <form action="/mi-familia/buscar_viviendas" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+  </form>
+
+  {% if lista_viviendas != null %}
+    <P>&nbsp;</P>
+    <SPAN class="titulo_seccion">Listado de Viviendas</SPAN>
+    <TABLE border=0 cellspacing="3" cellpadding="3" style="background-color:white; width:750px;">
+      <TR style="background-color:black; color:white;">
+        <TH>NOMBRE</TH><TH>DIRECCION</TH><TH>PASAPORTE</TH>
+      </TR>
+
+  
+    {% for Vivienda in lista_viviendas %}
+      <TR style="background-color:#CCCCCC;"">
+        <TD>{{Vivienda.nombre}}</TD> 
+        <TD>{{Vivienda.tipo_casa}}</TD>
+        <TD>{{Vivienda.habitaciones}}</TD>
+      </TR>
+    {% endfor %}
+
+    </TABLE>
+
+  {% endif %}
+  
+<center>
+<TABLE width="200"><TR><TD align="center" class="navegacion"><a href="{% url 'familiar-alta' %}">Alta</a></TD></TR></TABLE>
+</center>
+    
+{% endblock %}

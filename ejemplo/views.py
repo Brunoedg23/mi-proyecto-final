@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from django.shortcuts import render
-from ejemplo.models import Familiar, Configuracion
-from ejemplo.forms import Buscar, FamiliarForm
+from ejemplo.models import Familiar, Configuracion, Vivienda
+from ejemplo.forms import Buscar, FamiliarForm, ViviendaForm, DatosForm, BuscarVivienda
 from django.views import View 
 
 
@@ -33,9 +32,8 @@ def mostrar_un_solo_familiar(request, id):
     identificador = int(id)
     return render(request, "ejemplo/un_familiar.html", Familiar.objects.get(id=identificador))
 
-
+    
 class BuscarFamiliar(View):
-
     form_class = Buscar
     template_name = 'ejemplo/buscar.html'
     initial = {"nombre":""}
@@ -58,8 +56,8 @@ class BuscarFamiliar(View):
         return render(request, self.template_name, {"form": form, 'conf_pages':conf_pages})
 
 
-class AltaFamiliar(View):
 
+class AltaFamiliar(View):
     form_class = FamiliarForm
     template_name = 'ejemplo/alta_familiar.html'
     initial = {"nombre":"", "direccion":"", "numero_pasaporte":""}
@@ -80,4 +78,77 @@ class AltaFamiliar(View):
                                                         'msg_exito': msg_exito,
                                                         'conf_pages':conf_pages})
         
+        return render(request, self.template_name, {"form": form, 'conf_pages':conf_pages})
+
+
+
+class Datos(View):
+    form_class = DatosForm
+    template_name = 'ejemplo/datos_familiar.html'
+    initial = {"nombre":""}
+
+    def get(self, request):
+        form = self.form_class(initial=self.initial)
+        conf_pages = Configuracion.objects.first()
+        return render(request, self.template_name, {'form':form,'conf_pages':conf_pages})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+        conf_pages = Configuracion.objects.first()
+        if form.is_valid():
+            form.save()
+            msg_exito = f"Se actualizó con éxito  {form.cleaned_data.get('nombre')}"
+            form = self.form_class(initial=self.initial)
+            return render(request, self.template_name, {'form':form, 
+                                                        'msg_exito': msg_exito,
+                                                        'conf_pages':conf_pages})
+
+        return render(request, self.template_name, {"form": form, 'conf_pages':conf_pages})
+
+
+class Vivienda(View):
+    form_class = ViviendaForm
+    template_name = 'ejemplo/vivienda_familiar.html'
+    initial = {"nombre":""}
+
+    def get(self, request):
+        form = self.form_class(initial=self.initial)
+        conf_pages = Configuracion.objects.first()
+        return render(request, self.template_name, {'form':form,'conf_pages':conf_pages})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+        conf_pages = Configuracion.objects.first()
+        if form.is_valid():
+            form.save()
+            msg_exito = f"Se actualizó con éxito  {form.cleaned_data.get('nombre')}"
+            form = self.form_class(initial=self.initial)
+            return render(request, self.template_name, {'form':form, 
+                                                        'msg_exito': msg_exito,
+                                                        'conf_pages':conf_pages})
+
+        return render(request, self.template_name, {"form": form, 'conf_pages':conf_pages})
+
+
+
+class BuscarVivienda(View):
+    form_class = BuscarVivienda
+    template_name = 'ejemplo/buscar_viviendas.html'
+    initial = {"nombre":""}
+
+    def get(self, request):
+        conf_pages = Configuracion.objects.first()
+        form = self.form_class(initial=self.initial)
+        return render(request, self.template_name, {'form':form, 'conf_pages':conf_pages})
+
+    def post(self, request):
+        conf_pages = Configuracion.objects.first()
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            nombre = form.cleaned_data.get("nombre")
+            lista_viviendas = Familiar.objects.filter(nombre__icontains=nombre).all() 
+            form = self.form_class(initial=self.initial)
+            return render(request, self.template_name, {'form':form, 
+                                                        'lista_viviendas':lista_viviendas,
+                                                        'conf_pages':conf_pages})
         return render(request, self.template_name, {"form": form, 'conf_pages':conf_pages})

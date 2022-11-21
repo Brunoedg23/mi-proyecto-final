@@ -1,0 +1,23 @@
+{%extends 'blog/base.html' %}
+{% block title %} - UpdateProfile{% endblock %}
+{% block pagina %}UpdateProfile{% endblock %}
+{% block contenido %}
+<CENTER>
+<form method="post">
+<TABLE class="table_form" width="700" valign="top">
+    <TR>
+    <TH colspan=2 style="text-align:center; background-color: black; color:white;">UPDATE PROFILE</TH>
+    </TR>
+    </tr>
+    <TR>
+    <td>
+    {% csrf_token %}
+    {{form.as_p}} 
+    </td>
+</TR>
+<TR>
+    <td colspan="2"><input type="submit" class="btn btn-primary" value="Actualizar"></td></tr>
+    </TABLE>
+</form>
+</CENTER>
+{% endblock %}
