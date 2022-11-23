@@ -10,7 +10,6 @@ Entrega final del Proyecto Final de BLOG en Python/Django para Coderhouse.
 El proyecto que hemos desarrollado es un Blog de lugares de Argentina; donde cada usuario tiene la posibilidad mediante una registración de crear publicaciones de ciudades/lugares que haya visitado. Todo el contenido podría ser administrado vía login; y en la vista pública el usuario solamente podrá observar los lugares pre-cargados...
 
 # Integrantes del Proyecto:
-- Bethzabeth Mendoza
 - Bruno Di Gaetano
 
 # Despliegue de nuestro Blog:

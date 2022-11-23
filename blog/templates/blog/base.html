@@ -58,7 +58,7 @@
                 <li class="nav-item">Bienvenido/a&nbsp;</li>
                 {% if user.id != null %}
                 <li class="nav-item">
-                    {%if user.first_name != null %} {{ user.first_name }}
+                    {%if user.first_name != null %} {{ user.first_name }} {{ user.last_name }}
                     {% else %} {{ user.username }}
                     {% endif %}
                 </li>

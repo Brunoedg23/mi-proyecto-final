@@ -25,7 +25,7 @@ class ListPost(ListView):
     model = Post
 
 
-class CreatePost(LoginRequiredMixin, CreateView):
+class CreatePost(LoginRequiredMixin, CreateView, User):
     model=Post
     fields = ['title', 'short_content', 'content', 'image']
     success_url = reverse_lazy("list-post")
@@ -69,5 +69,5 @@ class BlogSignUp(CreateView):
 
 class ProfileUpdate(LoginRequiredMixin, UpdateView):
     model = User
-    fields = ['username', 'first_name', 'last_name', 'email']
+    fields = ['username', 'first_name', 'last_name', 'email', 'groups']
     success_url = reverse_lazy("blog-login")
